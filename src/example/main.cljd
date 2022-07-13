@@ -1,0 +1,12 @@
+(ns example.main
+  ;; TEST: comment CLJD shim out and Unknown Symbol error will be thrown.
+  (:require [example.macros-shim :as m])
+  (:host-ns
+   (:require [example.macros :as m])))
+
+(defmacro example-macro [s]
+  (m/example s)
+  )
+
+(defn main []
+  (example-macro "made it here"))
