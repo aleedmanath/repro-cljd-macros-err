@@ -1,0 +1,23 @@
+(ns example.core
+  (:require
+   ["package:flutter/material.dart" :as material]
+   ["package:flutter/widgets.dart" :as widget]))
+
+
+;; NOTE1: 
+;; ideally we would place 'widget/Column in macro but CLJD reports that symbol is not found
+;; this happens with CLJS macros too as namespace alias may not be the same where macro is expanded
+;; so as a workaround we typically define the reference as a clojure variable (e.g. (def column widget/Column))
+;; this gets  CLJD to compile but then flutter throws invalid argument error 
+
+(def ^:macro-support mappings
+  {:column `column})
+
+(def column widget/Column)
+
+(defmacro text [msg]
+  `(material/Text ~msg))
+
+(defmacro example-view []
+  `(~(get mappings :column)
+    .children [(text "works?!")]))

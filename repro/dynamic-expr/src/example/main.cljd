@@ -1,0 +1,9 @@
+(ns example.main
+  (:require
+   ["package:flutter/material.dart" :as material]
+   [example.core :as core]))
+
+(defn main []
+  (material/runApp
+   (material/MaterialApp
+    :home (core/example-view))))
