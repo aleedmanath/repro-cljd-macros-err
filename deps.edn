@@ -1,7 +1,5 @@
 {:paths ["src"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
         tensegritics/clojuredart
-        {:local/root "/Users/Alid/code/flutter/ClojureDart"
-;;          :git/url "git@github.com:tensegritics/ClojureDart.git"
-;; :sha "595062ba49f0c6210aa7b69385b940386fab0872"
-         }}}
+        {:git/url "git@github.com:tensegritics/ClojureDart.git"
+         :sha "69c43135a30d74857801bbc0bb1e762fb6175757"}}}
