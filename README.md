@@ -1,5 +1,10 @@
 # cljd macro error testing
 
+Note: 
+- First reproduction about qualified keyword arguments is in `src` dir.
+- Second reproduction about dynamic widgets is in `repro/dynamic-expr`.
+
+
 Run
 ```
 clj -M -m cljd.build watch
